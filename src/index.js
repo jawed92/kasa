@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Presentation from './pages/Presentation';
+import Error from './pages/Erreur/Erreur';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,8 +14,9 @@ ReactDOM.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" component={About} />
+        <Route path="/about" element={<About />} />
        <Route path="/presentation" element={<Presentation />} />
+       <Route path="*" element={Error} />
       </Routes>
       <Footer />
     </Router>

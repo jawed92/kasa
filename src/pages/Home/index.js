@@ -4,6 +4,7 @@ import Banner from '../../components/Banner';
 import Card from '../../components/Card';
 import homeBannerImage from '../../assets/baniere.png';
 import styled from 'styled-components';
+import logementsData from '../../data/logement.json';
 
 const FirstTitle = styled.h1`
 position: absolute;
@@ -26,18 +27,19 @@ function Home() {
   return (
     <div className="app">
       <Banner imageSrc={homeBannerImage} altText="Home Banner" />
-        <FirstTitle><h1>Chez vous et partout ailleurs</h1></FirstTitle>
+      <FirstTitle><h1>Chez vous et partout ailleurs</h1></FirstTitle>
       <main id="mainIndex">
-          <GridContainer>
-        <Card to="/presentation" title="Titre de la location" imageSrc="" />
-          <Card to="#" title="Titre de la location" imageSrc="" />
-          <Card to="#" title="Titre de la location" imageSrc="" />
-          <Card to="#" title="Titre de la location" imageSrc="" />
-          <Card to="#" title="Titre de la location" imageSrc="" />
-          <Card to="#" title="Titre de la location" imageSrc="" />
-         </GridContainer>
+      <GridContainer>
+          {logementsData.map((logement) => (
+            <Card
+              key={logement.id}
+              to={`/logement/${logement.id}`}
+              title={logement.title}
+              imageSrc={logement.cover} // Utilisez l'URL de la couverture directement
+            />
+          ))}
+        </GridContainer>
       </main>
-      
     </div>
   );
 }
