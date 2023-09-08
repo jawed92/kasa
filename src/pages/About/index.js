@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Banner from '../../components/Banner';
 import aboutBannerImage from '../../assets/baniere-apropos.png';
 import styled from 'styled-components';
+import Collapse from '../../components/Collapse';
 
 const Main = styled.main`
   display: flex;
@@ -55,22 +56,48 @@ function About() {
         <SectionAbout>
           <Menu onClick={() => handleCollapseClick(0)}>
             <MenuTitle>Fiabilité <Arrow>{openIndex === 0 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <MenuRoll open={openIndex === 0}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit iure minus rerum odio? Voluptatibus recusandae nobis cum harum dignissimos dolor mollitia? Dolores omnis, aperiam iusto ab reiciendis voluptas perferendis quae?</MenuRoll>
+            <Collapse isOpen={openIndex === 0}>
+              <MenuRoll>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Reprehenderit iure minus rerum odio? Voluptatibus recusandae
+                nobis cum harum dignissimos dolor mollitia? Dolores omnis,
+                aperiam iusto ab reiciendis voluptas perferendis quae?
+              </MenuRoll>
+            </Collapse>
           </Menu>
 
           <Menu onClick={() => handleCollapseClick(1)}>
             <MenuTitle>Respect <Arrow>{openIndex === 1 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <MenuRoll open={openIndex === 1}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit iure minus rerum odio? Voluptatibus recusandae nobis cum harum dignissimos dolor mollitia? Dolores omnis, aperiam iusto ab reiciendis voluptas perferendis quae?</MenuRoll>
-          </Menu>
+            <Collapse isOpen={openIndex === 0}>
+              <MenuRoll>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Reprehenderit iure minus rerum odio? Voluptatibus recusandae
+                nobis cum harum dignissimos dolor mollitia? Dolores omnis,
+                aperiam iusto ab reiciendis voluptas perferendis quae?
+              </MenuRoll>
+            </Collapse>          </Menu>
 
           <Menu onClick={() => handleCollapseClick(2)}>
             <MenuTitle>Service <Arrow>{openIndex === 2 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <MenuRoll open={openIndex === 2}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit iure minus rerum odio? Voluptatibus recusandae nobis cum harum dignissimos dolor mollitia? Dolores omnis, aperiam iusto ab reiciendis voluptas perferendis quae?</MenuRoll>
-          </Menu>
+            <Collapse isOpen={openIndex === 0}>
+              <MenuRoll>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Reprehenderit iure minus rerum odio? Voluptatibus recusandae
+                nobis cum harum dignissimos dolor mollitia? Dolores omnis,
+                aperiam iusto ab reiciendis voluptas perferendis quae?
+              </MenuRoll>
+            </Collapse>          </Menu>
 
           <Menu onClick={() => handleCollapseClick(3)}>
             <MenuTitle>Sécurité <Arrow>{openIndex === 3 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <MenuRoll open={openIndex === 3}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit iure minus rerum odio? Voluptatibus recusandae nobis cum harum dignissimos dolor mollitia? Dolores omnis, aperiam iusto ab reiciendis voluptas perferendis quae?</MenuRoll>
+            <Collapse isOpen={openIndex === 0}>
+              <MenuRoll>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Reprehenderit iure minus rerum odio? Voluptatibus recusandae
+                nobis cum harum dignissimos dolor mollitia? Dolores omnis,
+                aperiam iusto ab reiciendis voluptas perferendis quae?
+              </MenuRoll>
+            </Collapse>
           </Menu>
         </SectionAbout>
       </Main>

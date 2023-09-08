@@ -1,0 +1,60 @@
+// Header.scss
+
+$header-color: #FF6060; // Définissez vos variables SASS si nécessaire
+
+header {
+  display: flex;
+  flex-direction: row;
+  margin: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.logo {
+  width: 50%;
+}
+
+.ulNav {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  width: 100%;
+  gap: 2rem;
+}
+
+header a {
+  color: $header-color; // Utilisation de la variable SASS
+}
+
+/***************Mobile************/
+
+@media screen and (min-width: 320px) and (max-width:768px) {
+
+    * {
+        font-size: 13px;
+    }
+
+    /************Header************/
+
+    header {
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+    }
+
+    .logoResponsive {
+        width: 50%;
+    }
+
+    nav {
+        justify-content: flex-end;
+    }
+
+    .ulNav a {
+        text-transform: uppercase;
+    }
+}

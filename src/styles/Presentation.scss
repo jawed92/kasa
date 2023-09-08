@@ -1,92 +1,106 @@
 #presentation {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-  
-    .sectionPresentation {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      width: 50%;
-      height: 100%;}
-  
-      .description {
-        font-size: 1.3rem;
-        color: #FF6060;
-        cursor: pointer;
-      }
-  article{
-    display: flex;
-    margin: 0 30px 0 30px ;
-  }
-      .localisation {
-        color: #FF6060;
-      }
-  
-      .avantages {
-        list-style-type: none;
-        display: flex;
-        flex-direction: row;
-        gap: 0.5rem;
-        font-size: 0.8rem;
-      }
-  
-      .liAvantages {
-        padding: 2px 20px 2px 20px;
-        border-radius: 40px;
-        background-color: #FF6060;
-        color: #F6F6F6;
-      }
-  
-      .menu-description {
-        width: 60%;
-        margin-bottom: 10px;
-        cursor: pointer;
-        background-color: #FF6060;
-        padding: 10px 20px 10px 15px;
-        border-radius: 10px;
-        color: #FFFFFF;}
-  
-        h2 {
-          font-weight: normal;
-          font-size: 1rem;
-        }
-    
-  
-    .sectionEquipements {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      gap: 1rem;
-      align-items: flex-end;
-      height: 100%;}
-  
-      .cercle {
-        width: 50px;
-        height: 50px;
-        background-color: grey;
-        border-radius: 50%;
-      }
-  
-      .prop {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;}
-  
-        .propPrenom,
-        .propNom,
-        .etoile {
-          color: #FF6060;
-        }
-//       }
-  
-    //   .menu-description {
-    //     display: none;}
-  
-        // &.collapse-open {
-        //   display: block;
-        // }
-//       }
-//     }
-//   }
-  
+
+.sectionPresentation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 50%;
+  height: 100%;
+}
+
+.description {
+  font-size: 1.3rem;
+  color: #ff6060;
+  cursor: pointer;
+}
+
+article {
+  display: flex;
+  margin: 0 30px 0 30px;
+}
+
+.localisation {
+  color: #ff6060;
+}
+
+.avantages {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.liAvantages {
+  padding: 2px 20px 2px 20px;
+  border-radius: 40px;
+  background-color: #ff6060;
+  color: #f6f6f6;
+}
+
+.menu-description {
+  width: 60%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #ff6060;
+  padding: 10px 20px 10px 15px;
+  border-radius: 10px;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+  overflow: hidden; /* Ajout d'overflow pour le contenu caché */
+}
+
+.menu-description.active {
+  background-color: #ff7070;
+}
+
+.menu-description:hover {
+  background-color: #ff7070; /* Couleur de fond au survol */
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.sectionEquipements {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1rem;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.cercle {
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  border-radius: 50%;
+}
+
+.prop {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.propPrenom,
+.propNom,
+.etoile {
+  color: #ff6060;
+}
+
+.menu-roll {
+  background: #ccc;
+  max-height: 0; /* Le contenu est initialement caché */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Ajout de transition pour la hauteur et le padding */
+}
+.menu-description.active .menu-roll {
+  max-height: 800px;
+  padding: 10px 20px 10px 15px;
+}

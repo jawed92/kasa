@@ -1,0 +1,32 @@
+/* Styles pour l'animation du chevron */
+@keyframes rotateUp {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-180deg);
+    }
+  }
+  
+  @keyframes rotateDown {
+    0% {
+      transform: rotate(-180deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+ 
+  /* Styles pour les icônes de chevron */
+  .chevron-icon {
+  
+    &.rotateUp {
+      animation: rotateUp 0.5s;
+    }
+  
+    &.rotateDown {
+      animation: rotateDown 0.5s;
+    }
+  }
+  

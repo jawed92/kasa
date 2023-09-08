@@ -1,21 +1,18 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import LogoHeader from '../../assets/LOGO.png';
+import '../../styles/Header.scss';
 
 const HeaderContainer = styled.header`
-  display: flex;
-  flex-direction: row;
-  margin: 30px;
+ 
 `;
 
 const Logo = styled.img`
-  width: 50%;
+
 `;
 
 const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  width: 50%;
+  
 `;
 
 const UlNav = styled.ul`

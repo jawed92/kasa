@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const CardContainer = styled.div`
@@ -17,10 +17,16 @@ const Title = styled.h2`
   color: #FFFFFF;
 `;
 
-function Card({ to, title, imageSrc }) {
+function Card({ id, title, imageSrc }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/presentation/${id}`);
+  };
+  
   return (
-    <CardContainer>
-      <Link to={to}>
+    <CardContainer onClick={handleCardClick}>
+      <Link to={`/presentation/${id}`}>
         <div className="imageCard">
           <img src={imageSrc} alt="" />
         </div>

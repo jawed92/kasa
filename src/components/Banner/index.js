@@ -4,10 +4,11 @@ const BannerContainer = styled.div`
   position: relative;
   text-align: center;
   overflow: hidden;
+  margin: 50px;
 
   img {
     height: 250px;
-    width: calc(100% - 40px);
+    width: 100%;
     object-fit: cover;
     border-radius: 20px;
   }
