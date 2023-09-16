@@ -5,12 +5,15 @@ const BannerContainer = styled.div`
   text-align: center;
   overflow: hidden;
   margin: 50px;
+  border-radius: 20px;
+
 
   img {
     height: 250px;
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
+
   }
 `;
 

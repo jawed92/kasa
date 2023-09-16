@@ -17,6 +17,11 @@ const Title = styled.h2`
   color: #FFFFFF;
 `;
 
+const Image = styled.img`
+  width: 100%; 
+  height: auto; 
+`;
+
 function Card({ id, title, imageSrc }) {
   const navigate = useNavigate();
 
@@ -28,7 +33,7 @@ function Card({ id, title, imageSrc }) {
     <CardContainer onClick={handleCardClick}>
       <Link to={`/presentation/${id}`}>
         <div className="imageCard">
-          <img src={imageSrc} alt="" />
+          <Image img src={imageSrc} alt="" />
         </div>
         <div className="title">
           <Title>{title}</Title>

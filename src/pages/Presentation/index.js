@@ -16,26 +16,21 @@ function Presentation() {
   const [equipementsOpen, setEquipementsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  const toggleDescription = () => {
-    setDescriptionOpen(prevState => !prevState);
-  };
+  const fullName = logement.host.name;
+  const [firstName, lastName] = fullName.split(' ');
 
-  const toggleEquipements = () => {
-    setEquipementsOpen(prevState => !prevState);
-  };
-  
   useEffect(() => {
     if (!logement) {
-    console.log(12);
-    navigate('/error');
-    return null;
-  }
+      console.log(12);
+      navigate('/error');
+      return null;
+    }
   }, [logement, navigate]);
   
 
   return logement ? (
-    <div id="presentation">
-       {logement.pictures && logement.pictures.length > 0 ? (
+    <div className="presentation-container">
+      {logement.pictures && logement.pictures.length > 0 ? (
         <Slider
           images={[logement.cover, ...logement.pictures]}
           currentIndex={currentImageIndex}
@@ -44,55 +39,49 @@ function Presentation() {
       ) : (
         <Banner imageSrc={logement.cover} altText="Logement Banner" />
       )}
-      
-<h1 className="description">{logement.title}</h1>
-      <section className="sectionPresentation">
-        <p className="localisation">{logement.location}</p>
-        <ul className="avantages">
-        {logement.tags.map((tag, index) => (
-      <li className="liAvantages" key={index}>
-        {tag}
-      </li>
-    ))}
-        </ul>
-        <div className={`menu-description ${descriptionOpen ? 'active' : ''}`}>
-          <h2 className="collapse-trigger" onClick={toggleDescription}>Description</h2>
-          <Collapse isOpen={descriptionOpen}>
-            <div className="menu-roll">
-              <p>{logement.description}</p>
-            </div>
-          </Collapse>
-        </div>
-      </section>
-      <section className="sectionEquipements">
-        <div className="prop">
-          <div className="respPrenom">
-            <p className="propPrenom">{logement.name} <br className="propNom" /> Dumas</p>
-            <span className="cercle"></span>
+
+      <h1 className="description">{logement.title}</h1>
+      <div className="sections-container">
+        <section className="sectionPresentation">
+          <p className="localisation">{logement.location}</p>
+          <ul className="avantages">
+            {logement.tags.map((tag, index) => (
+              <li className="liAvantages" key={index}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+          <div className={`menu-description ${descriptionOpen ? 'active' : ''}`}>
+            <Collapse isOpen={descriptionOpen} title="Description">
+              <div className="menu-roll">
+                <p>{logement.description}</p>
+              </div>
+            </Collapse>
           </div>
-          <div className="etoile">
-            <i className="fas fa-star" aria-hidden="true"></i>
-            <i className="fas fa-star" aria-hidden="true"></i>
-            <i className="fas fa-star" aria-hidden="true"></i>
-            <i className="fas fa-star" aria-hidden="false"></i>
-            <i className="fas fa-star gris" aria-hidden="false"></i>
-          </div>
-        </div>
-        <div className={`menu-description ${equipementsOpen ? 'active' : ''}`}>
-          <h2 className="collapse-trigger" onClick={toggleEquipements}>Équipements</h2>
-          <Collapse isOpen={equipementsOpen}>
-            <div className="menu-roll">
-              <ul>
-                {logement.equipments.map((equipment, index) => (
-                  <li key={index}>{equipment}</li>
-                ))}
-              </ul>
+        </section>
+        <section className="sectionEquipements">
+          <div className="container-host">
+            <div className="host-info">
+              <p className="host-name">{firstName}</p>
+              <p className="host-lastname">{lastName}</p>
             </div>
-          </Collapse>
-        </div>
-      </section>
+            <img className="host-picture" src={logement.host.picture} alt="Hôte" />
+          </div>
+          <div className={`menu-description ${equipementsOpen ? 'active' : ''}`}>
+            <Collapse isOpen={equipementsOpen} title="Equipements">
+              <div className="menu-roll">
+                <ul>
+                  {logement.equipments.map((equipment, index) => (
+                    <li key={index}>{equipment}</li>
+                  ))}
+                </ul>
+              </div>
+            </Collapse>
+          </div>
+        </section>
+      </div>
     </div>
-  ): '';
-          }
+  ) : '';
+}
 
 export default Presentation;

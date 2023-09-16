@@ -2,11 +2,18 @@
   display: flex;
   flex-direction: column;
 }
-
+h1{
+  margin: 50px;
+}
+.sections-container {
+  display: flex;
+  align-items: center;
+  margin: 50px;
+}
 .sectionPresentation {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   width: 50%;
   height: 100%;
 }
@@ -42,11 +49,9 @@ article {
 }
 
 .menu-description {
-  width: 60%;
-  margin-bottom: 10px;
+  width: 90%;
   cursor: pointer;
   background-color: #ff6060;
-  padding: 10px 20px 10px 15px;
   border-radius: 10px;
   color: #ffffff;
   transition: background-color 0.3s ease;
@@ -54,16 +59,16 @@ article {
 }
 
 .menu-description.active {
-  background-color: #ff7070;
+  background-color: grey;
 }
-
-.menu-description:hover {
-  background-color: #ff7070; /* Couleur de fond au survol */
+.collapse .collapse-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 0 10px;
+  height: 40px;
 }
-
-h2 {
-  font-weight: normal;
-  font-size: 1rem;
+.collapse .chevron-icon-container {
+margin: 0 1rem 2rem 0;
 }
 
 .sectionEquipements {
@@ -75,28 +80,34 @@ h2 {
   height: 100%;
 }
 
-.cercle {
-  width: 50px;
-  height: 50px;
-  background-color: grey;
-  border-radius: 50%;
-}
-
-.prop {
+.container-host {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  gap: 1rem;
 }
 
-.propPrenom,
-.propNom,
-.etoile {
-  color: #ff6060;
+.host-info {
+  display: flex;
+  flex-direction: column;
+}
+.host-name {
+  color: #FF6060;
+  font-size: 1.2rem;
+  
+}
+
+.host-lastname {
+  color: #FF6060;
+  font-size: 1.2rem;
+}
+.host-picture {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover; 
 }
 
 .menu-roll {
-  background: #ccc;
-  max-height: 0; /* Le contenu est initialement caché */
+  max-height: 800px; /* Le contenu est initialement caché */
   overflow: hidden;
   transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Ajout de transition pour la hauteur et le padding */
 }

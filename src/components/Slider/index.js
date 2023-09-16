@@ -8,6 +8,7 @@ const sliderStyles = {
   height: '450px',
   with: '100%',
   margin: '50px',
+  borderRadius: '25px',
 };
 
 const imageStyles = {

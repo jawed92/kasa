@@ -55,8 +55,7 @@ function About() {
       <Main>
         <SectionAbout>
           <Menu onClick={() => handleCollapseClick(0)}>
-            <MenuTitle>Fiabilité <Arrow>{openIndex === 0 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <Collapse isOpen={openIndex === 0}>
+          <Collapse isOpen={openIndex === 0} title="Fiabilité"> 
               <MenuRoll>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Reprehenderit iure minus rerum odio? Voluptatibus recusandae
@@ -68,29 +67,31 @@ function About() {
 
           <Menu onClick={() => handleCollapseClick(1)}>
             <MenuTitle>Respect <Arrow>{openIndex === 1 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <Collapse isOpen={openIndex === 0}>
+            <Collapse isOpen={openIndex === 1}> {/* Utilisez le bon index ici */}
               <MenuRoll>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Reprehenderit iure minus rerum odio? Voluptatibus recusandae
                 nobis cum harum dignissimos dolor mollitia? Dolores omnis,
                 aperiam iusto ab reiciendis voluptas perferendis quae?
               </MenuRoll>
-            </Collapse>          </Menu>
+            </Collapse> 
+          </Menu>
 
           <Menu onClick={() => handleCollapseClick(2)}>
             <MenuTitle>Service <Arrow>{openIndex === 2 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <Collapse isOpen={openIndex === 0}>
+            <Collapse isOpen={openIndex === 2}> {/* Utilisez le bon index ici */}
               <MenuRoll>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Reprehenderit iure minus rerum odio? Voluptatibus recusandae
                 nobis cum harum dignissimos dolor mollitia? Dolores omnis,
                 aperiam iusto ab reiciendis voluptas perferendis quae?
               </MenuRoll>
-            </Collapse>          </Menu>
+            </Collapse>
+          </Menu>
 
           <Menu onClick={() => handleCollapseClick(3)}>
             <MenuTitle>Sécurité <Arrow>{openIndex === 3 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <Collapse isOpen={openIndex === 0}>
+            <Collapse isOpen={openIndex === 3}> {/* Utilisez le bon index ici */}
               <MenuRoll>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Reprehenderit iure minus rerum odio? Voluptatibus recusandae
@@ -104,5 +105,6 @@ function About() {
     </div>
   );
 }
+
 
 export default About;
