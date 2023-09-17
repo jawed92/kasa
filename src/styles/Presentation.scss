@@ -7,7 +7,7 @@ h1{
 }
 .sections-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin: 50px;
 }
 .sectionPresentation {
@@ -51,24 +51,20 @@ article {
 .menu-description {
   width: 90%;
   cursor: pointer;
-  background-color: #ff6060;
   border-radius: 10px;
-  color: #ffffff;
+  background-color: #f6f6f6;
   transition: background-color 0.3s ease;
-  overflow: hidden; /* Ajout d'overflow pour le contenu caché */
+  overflow: hidden; 
 }
 
 .menu-description.active {
-  background-color: grey;
+  background-color: #f6f6f6;
 }
-.collapse .collapse-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 10px 0 10px;
-  height: 40px;
-}
-.collapse .chevron-icon-container {
-margin: 0 1rem 2rem 0;
+
+.contenuMargin {
+  margin: 15px;
+  color: #FF6060;
+  font-size: 1rem;
 }
 
 .sectionEquipements {
@@ -106,12 +102,3 @@ margin: 0 1rem 2rem 0;
   object-fit: cover; 
 }
 
-.menu-roll {
-  max-height: 800px; /* Le contenu est initialement caché */
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Ajout de transition pour la hauteur et le padding */
-}
-.menu-description.active .menu-roll {
-  max-height: 800px;
-  padding: 10px 20px 10px 15px;
-}

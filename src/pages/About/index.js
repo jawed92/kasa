@@ -24,23 +24,18 @@ const SectionAbout = styled.section`
 const Menu = styled.div`
   text-align: center;
   cursor: pointer;
-`;
-
-const MenuTitle = styled.h3`
-  font-size: 1.3rem;
-  color: #FF6060;
-`;
-
-const Arrow = styled.span`
-  font-size: 1.2rem;
-  margin-left: 5px;
+  width: 100%;
+  color: #ffffff;
 `;
 
 const MenuRoll = styled.p`
   font-size: 1rem;
-  color: #000000;
-  display: ${props => (props.open ? 'block' : 'none')};
+  color: #FF6060;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  
 `;
+
 
 function About() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -66,8 +61,7 @@ function About() {
           </Menu>
 
           <Menu onClick={() => handleCollapseClick(1)}>
-            <MenuTitle>Respect <Arrow>{openIndex === 1 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <Collapse isOpen={openIndex === 1}> {/* Utilisez le bon index ici */}
+          <Collapse isOpen={openIndex === 1} title="Respect">           
               <MenuRoll>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Reprehenderit iure minus rerum odio? Voluptatibus recusandae
@@ -78,8 +72,7 @@ function About() {
           </Menu>
 
           <Menu onClick={() => handleCollapseClick(2)}>
-            <MenuTitle>Service <Arrow>{openIndex === 2 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <Collapse isOpen={openIndex === 2}> {/* Utilisez le bon index ici */}
+          <Collapse isOpen={openIndex === 2} title="Service">
               <MenuRoll>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Reprehenderit iure minus rerum odio? Voluptatibus recusandae
@@ -90,8 +83,7 @@ function About() {
           </Menu>
 
           <Menu onClick={() => handleCollapseClick(3)}>
-            <MenuTitle>Sécurité <Arrow>{openIndex === 3 ? '▲' : '▼'}</Arrow></MenuTitle>
-            <Collapse isOpen={openIndex === 3}> {/* Utilisez le bon index ici */}
+          <Collapse isOpen={openIndex === 3} title="Sécurité">
               <MenuRoll>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Reprehenderit iure minus rerum odio? Voluptatibus recusandae

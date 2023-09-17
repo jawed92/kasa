@@ -54,7 +54,7 @@ function Presentation() {
           <div className={`menu-description ${descriptionOpen ? 'active' : ''}`}>
             <Collapse isOpen={descriptionOpen} title="Description">
               <div className="menu-roll">
-                <p>{logement.description}</p>
+                <p className='contenuMargin'>{logement.description}</p>
               </div>
             </Collapse>
           </div>
@@ -70,7 +70,7 @@ function Presentation() {
           <div className={`menu-description ${equipementsOpen ? 'active' : ''}`}>
             <Collapse isOpen={equipementsOpen} title="Equipements">
               <div className="menu-roll">
-                <ul>
+                <ul className='contenuMargin'>
                   {logement.equipments.map((equipment, index) => (
                     <li key={index}>{equipment}</li>
                   ))}

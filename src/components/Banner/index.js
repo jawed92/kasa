@@ -1,29 +1,12 @@
-import styled from 'styled-components';
+import React from 'react';
+import '../../styles/Banner.scss';
 
-const BannerContainer = styled.div`
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  margin: 50px;
-  border-radius: 20px;
-
-
-  img {
-    height: 250px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-
-  }
-`;
-
-function Banner({ imageSrc, altText }) {
+function Banner({ imageSrc, altText, responsive }) {
   return (
-    <BannerContainer>
+    <div className={`banner-container ${responsive ? 'responsive' : ''}`}>
       <img src={imageSrc} alt={altText} />
-    </BannerContainer>
+    </div>
   );
 }
 
 export default Banner;
-

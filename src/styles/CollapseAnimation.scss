@@ -29,23 +29,17 @@
       animation: rotateDown 0.5s;
     }
   }
-  
-//   .collapse-header {
-//   display: flex;
-//   justify-content: space-between; /* Place le contenu à l'extrémité */
-//   align-items: center; /* Centre le contenu verticalement */
-// }
 
-// .title-collapse {
-//   background-color: #ff6060; /* Arrière-plan du titre du Collapse */
-//   padding: 10px;
-//   border-radius: 10px;
-//   color: #ffffff;
-//   transition: background-color 0.3s ease;
-//   flex-grow: 1; /* Le titre prendra l'espace disponible */
-//   margin-right: 10px; /* Ajoute un espace entre le titre et le chevron */
-// }
+  .collapse-title {
+    font-weight: normal;
+  }
 
-// .chevron-icon-container {
-//   flex-shrink: 0; /* Empêche le chevron de rétrécir */
-// }
+  .collapse-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #FF6060;
+  border-radius: 10px;
+  padding-right: 15px;
+  color: #FFFF;
+}

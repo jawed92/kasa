@@ -1,0 +1,22 @@
+/* Banner.scss */
+
+.banner-container {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    margin: 50px;
+    border-radius: 20px;
+  
+    img {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+   .banner-container{
+    width: 100%;
+   }
+}
+  

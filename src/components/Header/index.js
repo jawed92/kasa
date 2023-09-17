@@ -1,52 +1,25 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import LogoHeader from '../../assets/LOGO.png';
 import '../../styles/Header.scss';
 
-const HeaderContainer = styled.header`
- 
-`;
-
-const Logo = styled.img`
-
-`;
-
-const Nav = styled.nav`
-  
-`;
-
-const UlNav = styled.ul`
-  display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-  width: 100%;
-  gap: 2rem;
-`;
-
-const NavItem = styled.li`
-  a {
-    color: #FF6060;
-    text-decoration: none;
-  }
-`;
-
 function Header() {
   return (
-    <HeaderContainer>
+    <header className="header-container">
       <Link to="/" className="logo">
-        <Logo src={LogoHeader} alt="Logo Kasa" className="logoResponsive" />
+        <img src={LogoHeader} alt="Logo Kasa" className="logo-responsive" />
       </Link>
-      <Nav>
-        <UlNav>
-          <NavItem>
+      <nav className="nav">
+        <ul className="ul-nav">
+          <li className="nav-item">
             <Link to="/">Accueil</Link>
-          </NavItem>
-          <NavItem>
+          </li>
+          <li className="nav-item">
             <Link to="/about">A propos</Link>
-          </NavItem>
-        </UlNav>
-      </Nav>
-    </HeaderContainer>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
