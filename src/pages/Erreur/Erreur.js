@@ -1,29 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const ErrorWrapper = styled.div`
-  text-align: center;
-`;
-
-const ErrorTitle = styled.h1`
-  font-size: 2rem;
-  color: red;
-`;
-
-const ErrorSubtitle = styled.p`
-  font-size: 1.2rem;
-  color: #888888;
-`;
+import React from "react";
+import { Link } from "react-router-dom";
+import "../../styles/Error.scss";
 
 function Error() {
-  return (
-     <ErrorWrapper>
-      <ErrorTitle>404</ErrorTitle>
-     <ErrorSubtitle>
-     Oups! La page que vous demandez n'existe pas.
-     </ErrorSubtitle>
-   </ErrorWrapper>
-  );
+	return (
+		<div className="error-wrapper">
+			<h1 className="error-title">404</h1>
+			<p className="error-subtitle">
+				Oups! La page que vous demandez n'existe pas.
+			</p>
+			<Link href="/Home" className="retour">
+				Retourner sur la page d'accueil
+			</Link>
+		</div>
+	);
 }
 
 export default Error;

@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
 }
-h1{
+
+.banner-cont {
   margin: 50px;
 }
+
 .sections-container {
   display: flex;
-  align-items: flex-start;
   margin: 50px;
 }
 .sectionPresentation {
@@ -71,7 +72,7 @@ article {
   display: flex;
   flex-direction: column;
   width: 50%;
-  gap: 1rem;
+  gap: 1.2rem;
   align-items: flex-end;
   height: 100%;
 }
@@ -102,3 +103,50 @@ article {
   object-fit: cover; 
 }
 
+.rating-stars {
+  display: flex;
+  align-items: center; /* Alignez les étoiles verticalement avec le nom de l'hôte */
+  gap: 4px; /* Espace entre les étoiles */
+}
+
+/* Styles pour les étoiles pleines */
+.star-solid {
+  color: #FF6060;
+  font-size: 1rem;
+}
+
+/* Styles pour les étoiles vides */
+.star-regular {
+  color: #E3E3E3;
+  font-size: 1rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .banner-cont {
+    margin: 15px;
+  }
+
+  .sections-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 0.5rem;
+  }
+  .description {
+    margin: 0;
+  }
+  .sectionPresentation {
+    width: 100%;
+  }
+
+  .sectionEquipements {
+    width: 100%;
+  }
+  .liAvantages {
+    padding: 4px 4px 4px 4px;
+  }
+  
+}

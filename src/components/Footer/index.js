@@ -1,41 +1,21 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import FooterLogo from '../../assets/LOGO-footer.png';
-
-const FooterContainer = styled.footer`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  padding: 30px;
-  background-color: #000000;
-`;
-
-const LogoFooter = styled.div`
-  a {
-    display: block;
-  }
-`;
-
-const LogoImage = styled.img``;
-
-const Copyright = styled.div`
-  color: #f6f6f6;
-`;
+import React from "react";
+import { Link } from "react-router-dom";
+import "../../styles/Footer.scss";
+import FooterLogo from "../../assets/LOGO-footer.png";
 
 function Footer() {
-  return (
-    <FooterContainer>
-      <LogoFooter>
-        <Link to="/">
-          <LogoImage src={FooterLogo} alt="Logo Kasa" />
-        </Link>
-      </LogoFooter>
-      <Copyright>
-        <p>2020 Kasa, Tous droits réservés</p>
-      </Copyright>
-    </FooterContainer>
-  );
+	return (
+		<footer className="footer-container">
+			<div className="logo-footer">
+				<Link to="/">
+					<img src={FooterLogo} alt="Logo Kasa" />
+				</Link>
+			</div>
+			<div className="copyright">
+				<p>2020 Kasa, Tous droits réservés</p>
+			</div>
+		</footer>
+	);
 }
 
 export default Footer;

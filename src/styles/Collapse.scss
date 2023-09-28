@@ -1,11 +1,9 @@
-/* Styles pour l'animation du chevron */
+// /* Styles pour l'animation du chevron */
 @keyframes rotateUp {
     0% {
       transform: rotate(0deg);
     }
-    100% {
-      transform: rotate(-180deg);
-    }
+    
   }
   
   @keyframes rotateDown {
@@ -40,6 +38,16 @@
   align-items: center; 
   background-color: #FF6060;
   border-radius: 10px;
-  padding-right: 15px;
+  padding: 15px;
   color: #FFFF;
+}
+
+.content-collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.content-collapse.open {
+  max-height: 800px; /* Ajustez la hauteur maximale selon vos besoins */
 }

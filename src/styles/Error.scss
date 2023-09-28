@@ -1,0 +1,23 @@
+// ErrorStyles.scss
+
+.error-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 50px;
+  }
+  
+  .error-title {
+    font-size: 2rem;
+    color: #FF6060;
+  }
+  
+  .error-subtitle {
+    font-size: 1.2rem;
+    color: #888888;
+  }
+  .retour {
+    color: #FF6060;
+  }
+  
